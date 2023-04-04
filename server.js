@@ -5,7 +5,7 @@ const user=require("./model/userSchema")
 const parkingLot=require("./model/parkingSpace")
 const app=express();
 const cors = require("cors");
-
+const PORT=process.env.PORT || 3000
 dotenv.config({path:'./config.env'})
 
 require("./db/db")
@@ -81,6 +81,6 @@ app.get('/users/:id',async(req,res)=>{
         res.status(500).send('Something went wrong.');
     }
 })
-app.listen(3000,()=>{
+app.listen(PORT,()=>{
     console.log("server connected")
 })
